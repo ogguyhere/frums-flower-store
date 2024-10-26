@@ -1,13 +1,16 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}", // specify your project files here
   ],
   theme: {
     extend: {
       colors: {
-        darkGreen: '#0B3D3B', // Customize this color as per your choice
-        purple: '#5D3A9B',
+        'dark-maroon': '#1F1D20',
+        'deep-red': '#803E2F',
+        'earthy-terracotta': '#A79986',
+        'light-terracotta': '#D1A58B',
+        'warm-brown': '#3E3D38',
       },
     },
   },

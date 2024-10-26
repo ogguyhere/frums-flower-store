@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* In App.css or your main CSS file */
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0; /* Fully transparent */
+  }
+  25% {
+    opacity: 1; /* Fully visible */
+  }
+  75% {
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    opacity: 0; /* Fully transparent */
+  }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 5s infinite; /* Adjust duration for total animation time */
+}
+
+
+
+
+.section {
+  height: 100vh;
+  /* Each section takes the full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+/* Custom background color classes */
+
+
+.bg-1 {
+  background-color: #0b090c;
+}
+
+.bg-2 {
+  background-color: #410b0bef;
+}
+
+.bg-3 {
+  background-color: #8d3420;
+}
+
+.bg-4 {
+  background-color: #a89173;
+}
+
+.bg-5 {
+  background-color: #362c27;
+}
+
+.bg-6 {
+  background-color: #35342e;
+}
+.bg-7 {
+  background-color: #1a181b;
+}
+/* Example usage for a gradient background */
+.bg-gradient {
+  background: linear-gradient(180deg, #1F1D20, #5a2525ef, #803E2F, #bdad98, #3a312c, #3E3D38);
+}
+
+.custom-font-size {
+  font-size: 2rem; /* Adjust the value as needed */
+}
+
+.frums-store-font {
+  font-family: 'Bradley Hand', cursive; /* Use the font family you selected */
+}
+
+.font{
+  font-family: "Bookman", "URW Bookman L", serif
+}
+
+.fancy-button {
+  background-color: transparent; /* Transparent background */
+  color: white; /* Text color */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Make text bold */
+  transition: all 0.1s ease; /* Smooth transition */
+}
+
+.fancy-button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important; /* Change to your desired color */
+  padding: 8px 12px; /* Adjust padding for smaller buttons */
+  border-radius: 5px; /* Rounded corners */
+  border: 2px solid whitesmoke !important; /* Border color on hover */
+}
+
