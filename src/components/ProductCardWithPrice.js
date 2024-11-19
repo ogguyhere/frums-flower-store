@@ -4,12 +4,17 @@ import { Card, CardActionArea, CardContent, CardMedia, Typography, Button } from
 
 function ProductCardWithPrice({ image, title, description, price }) {
   const handleAddToCart = () => {
-    // Logic for adding the product to the cart
     alert(`${title} has been added to your cart!`);
   };
 
+  const handleBuyNow = () => {
+    // Redirect to PlaceOrder page or initiate order logic
+    alert(`Proceeding to buy ${title}.`);
+    // Redirect logic can be added here using react-router
+  };
+
   return (
-    <Card sx={{ maxWidth: 345, backgroundColor: '#1c1c1c' }}>
+    <Card sx={{ maxWidth: 345, backgroundColor: '#1c1c1c', margin: '1rem' }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -37,6 +42,15 @@ function ProductCardWithPrice({ image, title, description, price }) {
         className="mt-4"
       >
         Add to Cart
+      </Button>
+      <Button 
+        variant="contained" 
+        color="secondary" 
+        fullWidth 
+        onClick={handleBuyNow}
+        className="mt-2"
+      >
+        Buy Now
       </Button>
     </Card>
   );

@@ -1,38 +1,34 @@
-// src/pages/Shop.js
 import React, { useEffect, useState } from 'react';
-import ProductCardWithPrice from '../components/ProductCardWithPrice';
 import axios from 'axios';
+import ProductCardWithPrice from '../components/ProductCardWithPrice'; // Import the product card component
+import '../components/App.css'; // Add CSS for better layout
 
 function Shop() {
-  const [items, setItems] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch data from Node.js server
-    axios.get('http://localhost:5000/api/items')
+    // Fetch products from the backend
+    axios.get('http://localhost:3001/products') // Corrected backend port
       .then(response => {
-        setItems(response.data); // Set fetched items to state
+        setProducts(response.data);
       })
-      .catch(error => console.error("Error fetching items:", error));
+      .catch(error => {
+        console.error('Error fetching products:', error);
+      });
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-green-400 via-pink-500 to-purple-500 py-16 px-8">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-white">Shop Our Beautiful Collection</h1>
-        <p className="text-xl text-white mt-4">
-          Explore our stunning range of fresh flowers and arrangements. Perfect for every occasion!
-        </p>
-      </div>
-
-      {/* Render products fetched from the server */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {items.map(item => (
+    <div>
+      
+      <div className="products-container">
+        {products.map(product => (
           <ProductCardWithPrice
-            key={item.id}
-            image={`/path-to-your-image/${item.id}.jpg`} // Set up proper image paths
-            title={item.title}
-            description={item.description || "A beautiful flower arrangement."}
-            price={item.price}
+            key={product.Product_Id}
+            // Dynamically construct the full URL for the image
+            image={`http://localhost:3001${product.Image_URL}`} // Prepend backend URL to the image path
+            title={product.Product_Name}
+            description={product.Description}
+            price={product.Price}
           />
         ))}
       </div>

@@ -192,3 +192,20 @@
   from { text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF; }
   to { text-shadow: 0 0 10px #35342e, 0 0 20px #35342e, 0 0 30px #35342e; }
 }
+
+.shop-title {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.product-card {
+  margin: 10px;
+}
