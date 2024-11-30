@@ -38,13 +38,12 @@ function Cart() {
     console.log("Decoded Token:", decodedToken);  // Log the decoded token for debugging
     return decodedToken ? decodedToken.Customer_Id : null; // Ensure you're using the correct key
   };
-
   const handleRemoveItem = (cartId) => {
-    // Call DELETE API to remove item
+    console.log('Removing item with Cart ID:', cartId); // Log the cart ID
     axios.delete(`http://localhost:3001/cart/${cartId}`)
       .then(() => {
-        // Update state to reflect the removed item
-        setCartItems(cartItems.filter(item => item.Cart_Id !== cartId));
+        // Use functional update to ensure you're working with the latest state
+        setCartItems(prevItems => prevItems.filter(item => item.Cart_Id !== cartId));
         toast.success('Item removed from cart!');
       })
       .catch(error => {
@@ -52,7 +51,6 @@ function Cart() {
         toast.error('Failed to remove item from cart.');
       });
   };
-
   const totalPrice = cartItems.reduce((acc, item) => acc + item.Price * item.Quantity, 0); // Calculate total price
 
   return (
@@ -75,7 +73,7 @@ function Cart() {
                 description={item.Description} // Ensure Description is available
                 price={item.Price} // Ensure Price is available
                 quantity={item.Quantity} // Ensure Quantity is available
-                onRemove={() => handleRemoveItem(item.Cart_Id)}
+                onRemove={() => handleRemoveItem(item.Cart_id)}
               />
             ))}
           </Box>

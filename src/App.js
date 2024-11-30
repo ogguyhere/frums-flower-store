@@ -14,6 +14,9 @@ import Contact from './pages/Contact';
 import './components/App.css';
 import Cart from './pages/cart'; // Ensure correct case sensitivity
 import Profile from './pages/Profile';
+import BuyNow from './pages/BuyNow';
+import Review from './pages/Review';
+import Shipping from './pages/Shipping';
 
 function App() {
   const isAuthenticated = Boolean(localStorage.getItem('token'));
@@ -37,6 +40,9 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/buynow" element={<BuyNow/>}/>
+          <Route path="/review"element = {<Review/>}/>
+          <Route path="/shipping" element={<Shipping/>}/>
           {isAuthenticated ? (
             <Route path="/profile" element={<Profile logout={logout} />} />
           ) : (

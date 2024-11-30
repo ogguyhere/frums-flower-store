@@ -33,18 +33,14 @@ function Header({ isAuthenticated, logout }) {
             <Link to="/cart">Cart</Link>
           </button>
 
+          {/* Sign In and Logout */}
           {isAuthenticated ? (
-            <>
-              <button className="fancy-button text-white hover:text-yellow-400">
-                <Link to="/profile">Profile</Link>
-              </button>
-              <button
-                className="fancy-button text-white hover:text-yellow-400"
-                onClick={logout}
-              >
-                Logout
-              </button>
-            </>
+            <button
+              className="fancy-button text-white hover:text-yellow-400"
+              onClick={logout}
+            >
+              Logout
+            </button>
           ) : (
             <button className="fancy-button text-white hover:text-yellow-400">
               <Link to="/login">Sign In</Link>
