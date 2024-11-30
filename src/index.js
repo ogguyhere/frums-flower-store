@@ -10,7 +10,11 @@ const theme = createTheme();
 
 // Create the root element for React
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 // Render the application
 root.render(
   <React.StrictMode>

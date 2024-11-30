@@ -2,16 +2,7 @@
 import React from 'react';
 import { Card, CardActionArea, CardContent, CardMedia, Typography, Button } from '@mui/material';
 
-function ProductCardWithPrice({ image, title, description, price }) {
-  const handleAddToCart = () => {
-    alert(`${title} has been added to your cart!`);
-  };
-
-  const handleBuyNow = () => {
-    // Redirect to PlaceOrder page or initiate order logic
-    alert(`Proceeding to buy ${title}.`);
-    // Redirect logic can be added here using react-router
-  };
+function ProductCardWithPrice({ image, title, description, price, onAddToCart, onBuyNow }) {
 
   return (
     <Card sx={{ maxWidth: 345, backgroundColor: '#1c1c1c', margin: '1rem' }}>
@@ -38,7 +29,7 @@ function ProductCardWithPrice({ image, title, description, price }) {
         variant="contained" 
         color="primary" 
         fullWidth 
-        onClick={handleAddToCart}
+        onClick={onAddToCart} // Use the passed onAddToCart handler
         className="mt-4"
       >
         Add to Cart
@@ -47,7 +38,7 @@ function ProductCardWithPrice({ image, title, description, price }) {
         variant="contained" 
         color="secondary" 
         fullWidth 
-        onClick={handleBuyNow}
+        onClick={onBuyNow} // Use the passed onBuyNow handler
         className="mt-2"
       >
         Buy Now
