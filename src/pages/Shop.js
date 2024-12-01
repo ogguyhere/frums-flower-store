@@ -6,8 +6,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';  // Corrected import
+import { useNavigate } from 'react-router-dom';
 
 function Shop() {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -56,20 +58,20 @@ function Shop() {
 
   const handleAddToCart = async (product) => {
     const customerId = getCustomerIdFromToken();
-  
+
     console.log("Customer ID in Shop: ", customerId);
-  
+
     if (!customerId) {
       toast.error('You must be logged in to add items to the cart');
       return;
     }
-  
+
     console.log("Adding to cart:", {
       product_id: product.Product_Id,
       customer_id: customerId,
       quantity: 1,
     });
-  
+
     try {
       const response = await axios.post('http://localhost:3001/cart', {
         product_id: product.Product_Id,
@@ -80,7 +82,7 @@ function Shop() {
       toast.success(`${product.Product_Name} has been added to the cart!`);
     } catch (error) {
       console.error('Error adding product to cart:', error);
-  
+
       // Provide more specific feedback based on the error
       if (error.response && error.response.data) {
         if (error.response.data.code === 'ER_NO_REFERENCED_ROW_2') {
@@ -94,11 +96,20 @@ function Shop() {
     }
   };
 
-
   const handleBuyNow = (product) => {
-    // Redirect to buy page
-    window.location.href = `/buynow/${product.Product_Id}`;
+    const amount = 1; // Or you can dynamically calculate it based on user input or state
+    const price = product.Price; // The price from the product object
+
+    navigate('/buynow', {
+      state: {
+        Product_Id: product.Product_Id,
+        Price: price,
+        Amount: amount,
+      }
+    });
   };
+
+
 
   return (
     <div>

@@ -17,6 +17,7 @@ import Profile from './pages/Profile';
 import BuyNow from './pages/BuyNow';
 import Review from './pages/Review';
 import Shipping from './pages/Shipping';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const isAuthenticated = Boolean(localStorage.getItem('token'));
