@@ -5,9 +5,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Box, Typography, Divider, Button } from '@mui/material';
 import { jwtDecode } from 'jwt-decode';  // Corrected import
+import { useNavigate } from 'react-router-dom'; 
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const customerId = getCustomerIdFromToken();  // Get the logged-in user's ID
@@ -93,7 +95,11 @@ function Cart() {
             <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
               Total Price: ${totalPrice.toFixed(2)}
             </Typography>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate('/buynow')} // Navigate to Buy Now page
+            >
               Proceed to Checkout
             </Button>
           </Box>

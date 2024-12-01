@@ -97,7 +97,7 @@ function Shop() {
 
   const handleBuyNow = (product) => {
     // Redirect to buy page
-    window.location.href = `/buy/${product.Product_Id}`;
+    window.location.href = `/buynow/${product.Product_Id}`;
   };
 
   return (
