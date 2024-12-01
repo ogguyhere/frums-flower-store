@@ -17,6 +17,7 @@ import Profile from './pages/Profile';
 import BuyNow from './pages/BuyNow';
 import Review from './pages/Review';
 import Shipping from './pages/Shipping';
+import CustomizeBouquet from './pages/CustomizeBouquet';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path="/buynow" element={<BuyNow/>}/>
           <Route path="/review"element = {<Review/>}/>
           <Route path="/shipping" element={<Shipping/>}/>
+          <Route path="/customize" element={<CustomizeBouquet/>}/>
           {isAuthenticated ? (
             <Route path="/profile" element={<Profile logout={logout} />} />
           ) : (

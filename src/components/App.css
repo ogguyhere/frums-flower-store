@@ -240,7 +240,7 @@
 }
 
 .cart-item button:hover {
-  background-color: #d32f2f;
+  background-color: #6e0505;
 }
 
 table {
@@ -489,3 +489,153 @@ button {
   font-size: 1rem;
 }
 
+.fancy-button {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.fancy-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Sidebar Styles */
+.fixed {
+  position: fixed;
+}
+
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-opacity-50 {
+  opacity: 0.5;
+}
+
+.w-64 {
+  width: 16rem; /* 64 units */
+}
+
+.h-full {
+  height: 100%;
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.p-4 {
+  padding: 1rem; /* 4 units */
+}
+
+.text-black {
+  color: black;
+}
+
+.hover\:text-yellow-400:hover {
+  color: #fbbf24; /* Yellow color on hover */
+}
+
+.py-2 {
+  padding-top: 0.5rem; /* 2 units */
+  padding-bottom: 0.5rem; /* 2 units */
+}
+/* Sidebar default hidden state and transition effect */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden off the screen */
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Smooth slide-in */
+}
+
+.sidebar:hover {
+  transform: translateX(250px); /* Slide in when hovered */
+}
+
+.sidebar .close-btn {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.sidebar .close-btn:hover {
+  color: rgb(46, 1, 1);
+}
+
+.fancy-button {
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.fancy-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Container */
+.sidebar {
+  background-color: #3c0708 !important; /* Dark background */
+  color: #ffffff; /* White text for contrast */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Sidebar Links */
+.sidebar-link {
+  display: block;
+  margin: 10px 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  border-radius: 8px;
+  background-color: #2a0000 !important; /* Darker background */
+  color: #dddddd; /* Light gray text */
+  transition: all 0.3s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #4f1919 !important; /* Slightly lighter background */
+  color: #ffffff; /* Bright white text */
+  transform: scale(1.05);
+}
+/* App.css or CustomizeBouquet.css */
+.customize-bouquet {
+  text-align: center;
+  padding: 20px;
+}
+
+.filters select {
+  padding: 10px;
+  margin: 10px;
+}
+
+.flower-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flower-card {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.flower-card img {
+  width: 100%;
+  height: auto;
+}
